@@ -83,10 +83,7 @@ for puppet in names:
 			with open(NewListOfIssues, 'a+') as f:
 				# https://www.nationstates.net/nation=PUPPET/page=enact_dilemma/choice-1=1/dilemma=26
 				if (ISSUEid.get('id')=='407'):
-					if (not pulleventmode):
-						f.writelines('https://www.nationstates.net/page=show_dilemma/dilemma=407/template-overall=none'+"/nation="+puppet+"/container="+puppet+"/template-overall=none/pulleventmode=true\n")
-					else:
-						f.writelines('https://www.nationstates.net/page=show_dilemma/dilemma=407/template-overall=none'+"/nation="+puppet+"/container="+puppet+"/template-overall=none\n")
+						f.writelines(f'https://www.nationstates.net/container={puppet}/page=dilemmas/dismiss=407?name=choice--1&value=1\n")
 				else:
 					if (not pulleventmode):
 						f.writelines('https://www.nationstates.net/page=enact_dilemma/choice-'+ISSUEid.OPTION.get('id')+'=1/dilemma='+ISSUEid.get('id')+"/nation="+puppet+"/container="+puppet+"/template-overall=none\n")
